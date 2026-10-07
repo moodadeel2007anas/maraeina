@@ -2227,17 +2227,15 @@ function App() {
             🛒مراعينا
           </h1>
 
-          <button
-            onClick={() => {
-              console.log(
-                "🔔 BUTTON CLICKED"
-              )
-              enableNotifications()
-            }}
-          >
-            🔔 تفعيل الإشعارات
-          </button>
-
+         <button
+  className="notification-button"
+  onClick={() => {
+    console.log("🔔 BUTTON CLICKED")
+    enableNotifications()
+  }}
+>
+  🔔 تفعيل الإشعارات
+</button>
           <p>
             كل احتياجات بيتك في مكان واحد
           </p>

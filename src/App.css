@@ -207,3 +207,41 @@ input {
     font-size: 16px;
   }
 }
+.notification-button {
+  display: block;
+  width: 90%;
+  max-width: 420px;
+  margin: 18px auto;
+  padding: 16px 24px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: #e53935;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.35);
+  animation: notificationPulse 1.8s infinite;
+}
+
+.notification-button:hover {
+  transform: scale(1.03);
+}
+
+.notification-button:active {
+  transform: scale(0.98);
+}
+
+@keyframes notificationPulse {
+  0% {
+    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.35);
+  }
+
+  50% {
+    box-shadow: 0 5px 25px rgba(229, 57, 53, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.35);
+  }
+}
