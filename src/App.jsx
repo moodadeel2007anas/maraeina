@@ -2227,15 +2227,6 @@ function App() {
             🛒مراعينا
           </h1>
 
-         <button
-  className="notification-button"
-  onClick={() => {
-    console.log("🔔 BUTTON CLICKED")
-    enableNotifications()
-  }}
->
-  🔔 تفعيل الإشعارات
-</button>
           <p>
             كل احتياجات بيتك في مكان واحد
           </p>
@@ -2255,6 +2246,43 @@ function App() {
           })
         </button>
       </header>
+
+      {/* زر الإشعارات في المنتصف */}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "18px 10px",
+          boxSizing: "border-box",
+        }}
+      >
+        <button
+          onClick={() => {
+            console.log("🔔 BUTTON CLICKED")
+            enableNotifications()
+          }}
+          style={{
+            display: "block",
+            width: "90%",
+            maxWidth: "420px",
+            padding: "17px 24px",
+            fontSize: "22px",
+            fontWeight: "bold",
+            color: "#fff",
+            background: "#e53935",
+            border: "none",
+            borderRadius: "14px",
+            cursor: "pointer",
+            boxShadow:
+              "0 5px 18px rgba(229, 57, 53, 0.45)",
+            textAlign: "center",
+          }}
+        >
+          🔔 تفعيل الإشعارات
+        </button>
+      </div>
 
       <main className="container">
         <input
