@@ -139,9 +139,9 @@ button {
   border: 1px solid #dfe5e1;
   background: #fff;
   color: #333;
-  padding: 11px 20px;
-  border-radius: 25px;
-  font-size: 15px;
+  padding: 13px 23px;
+  border-radius: 27px;
+  font-size: 16px;
   font-weight: 700;
   transition: 0.2s ease;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
@@ -242,7 +242,6 @@ button {
   transform: scale(1.07);
 }
 
-/* الإيموجي لما مفيش صورة */
 .product-image:not(:has(img)) {
   font-size: 88px;
   line-height: 1;
@@ -392,6 +391,7 @@ button {
 }
 
 /* زر واتساب داخل السلة */
+
 .cart-box > .add {
   margin-top: 15px;
   background: #20a95a;
@@ -530,13 +530,13 @@ button {
   }
 
   .categories {
-    gap: 7px;
+    gap: 8px;
     margin-bottom: 22px;
   }
 
   .categories button {
-    padding: 9px 13px;
-    font-size: 13px;
+    padding: 11px 15px;
+    font-size: 14px;
   }
 
   .products {
