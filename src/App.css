@@ -223,7 +223,16 @@ input {
   box-shadow: 0 5px 15px rgba(229, 57, 53, 0.35);
   animation: notificationPulse 1.8s infinite;
 }
-
+.notification-button {
+  display: block !important;
+  width: 90% !important;
+  max-width: 420px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 18px !important;
+  margin-bottom: 18px !important;
+  text-align: center !important;
+}
 .notification-button:hover {
   transform: scale(1.03);
 }
