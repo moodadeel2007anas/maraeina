@@ -19,35 +19,64 @@ input {
   min-height: 100vh;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .header {
-  background: #16834a;
+  background: linear-gradient(135deg, #16834a, #0f6b3b);
   color: white;
-  padding: 18px 5%;
+  padding: 20px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 5;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
 }
 
 .header p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
+  font-size: 15px;
+  opacity: 0.92;
 }
+
+/* زر السلة */
 
 .cart {
   border: none;
   background: white;
   color: #16834a;
-  padding: 12px 18px;
-  border-radius: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+  white-space: nowrap;
 }
+
+.cart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+.cart:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
   width: 92%;
@@ -55,15 +84,31 @@ input {
   margin: 25px auto;
 }
 
+/* =========================
+   SEARCH
+========================= */
+
 .search {
   width: 100%;
-  padding: 15px;
+  padding: 16px 18px;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 17px;
   outline: none;
   margin-bottom: 18px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: 0.2s ease;
 }
+
+.search:focus {
+  border-color: #16834a;
+  box-shadow: 0 0 0 3px rgba(22, 131, 74, 0.12);
+}
+
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories {
   display: flex;
@@ -73,18 +118,31 @@ input {
 }
 
 .category {
-  border: none;
+  border: 1px solid #e1e1e1;
   background: white;
   padding: 10px 18px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.category:hover {
+  border-color: #16834a;
+  color: #16834a;
+  transform: translateY(-1px);
 }
 
 .category.active {
   background: #16834a;
   color: white;
+  border-color: #16834a;
+  box-shadow: 0 3px 8px rgba(22, 131, 74, 0.22);
 }
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .products-grid {
   display: grid;
@@ -94,10 +152,17 @@ input {
 
 .product-card {
   background: white;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  border: 1px solid #eeeeee;
+  transition: 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.11);
 }
 
 .product-image {
@@ -127,6 +192,7 @@ input {
   color: #16834a;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .add-button {
@@ -135,10 +201,25 @@ input {
   background: #16834a;
   color: white;
   padding: 11px;
-  border-radius: 9px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s ease;
 }
+
+.add-button:hover {
+  background: #116d3e;
+  transform: translateY(-1px);
+}
+
+.add-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   CART
+========================= */
 
 .cart-box {
   background: white;
@@ -165,54 +246,23 @@ input {
   border-radius: 6px;
   cursor: pointer;
   margin: 0 7px;
+  transition: 0.2s ease;
 }
 
-@media (max-width: 800px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .header {
-    padding: 15px;
-  }
-
-  .header h1 {
-    font-size: 24px;
-  }
-
-  .cart {
-    padding: 10px;
-  }
-
-  .product-image {
-    height: 120px;
-  }
+.cart-item button:hover {
+  background: #116d3e;
 }
 
-@media (max-width: 500px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* =========================
+   NOTIFICATION BUTTON
+========================= */
 
-  .product-card {
-    padding: 10px;
-  }
-
-  .product-card h3 {
-    font-size: 15px;
-  }
-
-  .price {
-    font-size: 16px;
-  }
-}
 .notification-button {
-  display: block;
-  width: 90%;
-  max-width: 420px;
-  margin: 18px auto;
-  padding: 16px 24px;
+  display: block !important;
+  width: 90% !important;
+  max-width: 420px !important;
+  margin: 18px auto !important;
+  padding: 17px 24px;
   font-size: 22px;
   font-weight: bold;
   color: white;
@@ -222,17 +272,10 @@ input {
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(229, 57, 53, 0.35);
   animation: notificationPulse 1.8s infinite;
-}
-.notification-button {
-  display: block !important;
-  width: 90% !important;
-  max-width: 420px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 18px !important;
-  margin-bottom: 18px !important;
   text-align: center !important;
+  transition: 0.2s ease;
 }
+
 .notification-button:hover {
   transform: scale(1.03);
 }
@@ -252,5 +295,80 @@ input {
 
   100% {
     box-shadow: 0 5px 15px rgba(229, 57, 53, 0.35);
+  }
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .header {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  .cart {
+    padding: 10px 13px;
+    font-size: 14px;
+  }
+
+  .product-image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 12px;
+  }
+
+  .cart {
+    padding: 9px 11px;
+    font-size: 13px;
+    border-radius: 11px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .notification-button {
+    width: 94% !important;
+    font-size: 20px;
+    padding: 16px 15px;
   }
 }
